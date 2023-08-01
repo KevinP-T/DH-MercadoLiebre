@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <form action="/" method="POST" class="container">
+            <p>
+                <label for="full-name" class="tittle-hidden">Nombre y apellido: </label>
+                <input type="text" name="Nombre y apellido" id="full-name" placeholder="Nombre y apellido" required>
+            </p>
+
+            <p>
+                <label for="user-name" class="tittle-hidden">Nombre de usuario: </label>
+                <input type="text" name="Usuario" id="user-name" placeholder="Usuario" required>
+            </p>
+
+            <p>
+                <label for="user-name" class="tittle-hidden">Correo Electronico: </label>
+                <input type="email" name="email" id="user-email" placeholder="E-Mail" required>
+            </p>
+
+            <p>
+                <label for="user-date" class="tittle">Fecha de nacimiento </label> <br>
+                <input type="date" name="Date" id="user-date" placeholder="Fecha de nacimiento" required>
+            </p>
+
+            <p>
+                <label for="user-home" class="tittle-hidden">Domicilio: </label>
+                <input type="text" name="Home" id="user-home" placeholder="Domicilio" required>
+            </p>
+
+            <div class="radios-container">
+                <label for="user-profile" class="tittle">Perfil de usuario</label>
+                <div class="radios">
+                    <div>
+                        <input type="radio" name="profile" id="seller" value="Vendedor" required><label
+                        for="seller">Vendedor</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="profile" id="shopper" value="Comprador" required><label
+                        for="shopper">Comprador</label>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <label for="user-interest" class="tittle">Intereses</label> <br>
+                <input type="checkbox" name="interest" value="Electro" id="electro"><label for="electro">Electro</label>
+                <br>
+                <input type="checkbox" name="interest" value="Moda" id="moda"><label for="moda">Moda</label> <br>
+                <input type="checkbox" name="interest" value="Hogar" id="hogar"><label for="hogar">Hogar</label> <br>
+                <input type="checkbox" name="interest" value="Juguetería" id="juguetería"><label
+                    for="juguetería">Juguetería</label> <br>
+                <input type="checkbox" name="interest" value="Vida-sana" id="vida-sana"><label for="vida-sana">Vida
+                    sana</label>
+            </p>
+
+            <p>
+                <label for="user-img" class="tittle">Foto de Perfil </label>
+                <input type="file" name="Img" id="user-img" required>
+            </p>
+
+            <p>
+                <label for="user-password" class="tittle">Contraseña </label>
+                <input type="password" name="user-password" id="user-password" placeholder="Contraseña" required>
+            </p>
+            <p>
+                <label for="user-password-confirm" class="tittle-hidden">Confirma contraseña </label>
+                <input type="password" name="user-password-confirm" id="user-password-confirm"
+                    placeholder="Confirmar contraseña" required>
+            </p>
+
+            <button class="btn-enviar" type="submit">ENVIAR</button>
+            <button class="btn-borrar" type="reset">BORRAR</button>
+        </form>
+    </main>
+</body>
+
+</html>
