@@ -56,7 +56,8 @@ ul {
     height: 2.5rem;
     width: 100%;
     outline: none;
-    padding-left: .5rem;
+    padding-left: 1rem;
+    color: var(--Gris-oscuro);
 }
 
 .search-icon{
@@ -174,6 +175,7 @@ section article {
 .titulares {
     font-size: 24px;
     margin: 0;
+    color: var(--Gris-oscuro);
 }
 
 
