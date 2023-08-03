@@ -1,6 +1,6 @@
-:root{
+:root {
     --Amarillo: #EAC926;
-    --Azul: #03264C;
+    --Azul: #05366b;
     --Celeste: #1259c3;
     --Gris-oscuro: #666;
     --Gris-claro: #ebebeb;
@@ -38,13 +38,15 @@ ul {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 0.5rem;
 }
 
 .img-logo {
-    width: 50%;
+    width: 40%;
+    height: auto;
 }
 
-.header-container-input{
+.header-container-input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,24 +55,30 @@ ul {
 .header-input {
     border: none;
     border-radius: 6px 0 0 6px;
-    height: 2.5rem;
-    width: 100%;
+    height: 2.2rem;
+    width: 85%;
     outline: none;
     padding-left: 1rem;
     color: var(--Gris-oscuro);
 }
 
-.search-icon{
+.search-icon {
     text-align: center;
     background: white;
-    height: 2.5rem;
+    height: 2.2rem;
+    width: 1rem;
     cursor: pointer;
     border-radius: 0 6px 6px 0;
     border: none;
 }
 
-.search-icon i{
+.search-icon i {
     color: gray;
+    transition: 0.1s;
+}
+
+.search-icon i:hover {
+    scale: 1.05;
 }
 
 .header-text {
@@ -96,12 +104,12 @@ ul {
     padding: 5px;
 }
 
-.header-link-container * a{
+.header-link-container * a {
     text-decoration: none;
     color: var(--Azul);
 }
 
-.header-link-container * a:hover{
+.header-link-container * a:hover {
     text-decoration: underline;
 }
 
@@ -116,7 +124,7 @@ ul {
     border-radius: 6px;
     border: none;
     text-decoration: none;
-    width: 9%;
+    width: 2.2rem;
     height: auto;
     margin: 0;
 
@@ -125,6 +133,10 @@ ul {
     align-items: center;
     font-size: 23px;
     margin: 3px;
+}
+
+.burger-menu-button button:hover {
+    background-color: var(--Azul);
 }
 
 
@@ -139,25 +151,26 @@ section article {
     margin-bottom: 10px;
 }
 
-.img-banner{
+.img-banner {
     width: 100vw;
 }
 
-.general-container{
+.general-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.cont-number{
+.cont-number {
     display: flex;
     align-items: center;
 }
 
-.cont-number :nth-child(1){
+.cont-number :nth-child(1) {
     width: 30%
 }
-.cont-number :nth-child(2){
+
+.cont-number :nth-child(2) {
     width: 70%;
 }
 
@@ -175,14 +188,14 @@ section article {
 .titulares {
     font-size: 24px;
     margin: 0;
-    color: var(--Gris-oscuro);
 }
 
 
 .descripciones {
-    font-size: 16px;
-    margin: 0;
-    display: none;
+    font-size: 17px;
+    margin: .8rem 0 0 0;
+    color: var(--Gris-oscuro);
+    font-weight: bold;
 }
 
 .caja-articulo {
@@ -190,7 +203,7 @@ section article {
     width: 90%;
 }
 
-.caja-articulo .contenido-articulo {
+.contenido-articulo {
     padding: 15px;
     background-color: white;
     border-top: solid 1px #ebebeb;
@@ -261,18 +274,14 @@ footer {
         margin: 0;
     }
 
-    .caja-articulo {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    .general-container{
+    .general-container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
 
     .caja-articulo {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
         width: 44%;
     }
 }
@@ -284,22 +293,19 @@ footer {
         padding-bottom: 6px;
     }
 
-    .header-input{
+    .header-input {
         height: 3rem;
         width: 35rem;
         font-size: 1.2rem;
     }
-    .search-icon{
+
+    .search-icon {
         height: 3rem;
         width: 3rem;
     }
 
-    .search-icon i{
+    .search-icon i {
         font-size: 1.2rem;
-        transition: 0.1s;
-    }
-    .search-icon i:hover{
-        font-size: 1.5rem;
     }
 
     .burger-menu-button {
@@ -310,15 +316,44 @@ footer {
         display: contents;
     }
 
-    .general-container{
+    .general-container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
 
     .caja-articulo {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        position: relative;
         width: 24%;
+        height: 100%;
     }
 
+    .contenido-articulo {
+        position: absolute;
+        width: 100%;
+
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: -1;
+
+        transition-duration: 900ms;
+    }
+
+    .caja-articulo:hover .contenido-articulo {
+        animation: mostrar 1s 1 forwards;
+
+        transition: 1s;
+    }
+
+    @keyframes mostrar{
+        50%{
+            z-index: 0;
+            transform: translateY(0);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 1;
+        }
+    }
 }
