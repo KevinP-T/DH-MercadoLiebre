@@ -153,6 +153,7 @@ section article {
 
 .img-banner {
     width: 100vw;
+    height: 100%;
 }
 
 .general-container {
@@ -201,6 +202,8 @@ section article {
 .caja-articulo {
     background-color: white;
     width: 90%;
+    position: relative;
+
 }
 
 .contenido-articulo {
@@ -210,6 +213,7 @@ section article {
 }
 
 #logo-envio {
+    color: #39b54a;
     font-size: 16px;
     padding: 5px;
     width: 30px;
@@ -217,9 +221,12 @@ section article {
     border: 1px solid #39b54a;
     background-color: #FFF;
     border-radius: 50%;
-    position: relative;
-    right: -79%;
-    top: 4%;
+    position: absolute;
+    right: 40px;
+    bottom: 0px;
+    z-index: 11;
+
+    transition: 800ms;
 }
 
 footer {
@@ -227,20 +234,30 @@ footer {
     background-color: #ebebeb;
 }
 
+.fot-sec-container{
+    display: flex;
+    flex-wrap: nowrap; 
+}
 
 .fot-sec {
-    align-items: center;
     text-align: center;
     margin: 32px;
     padding-top: 40px;
-    margin-top: 0;
 }
 
 .fot-icon {
-    color: white;
     align-items: center;
     font-size: 2rem;
     margin: 3px;
+}
+
+.fot-icon i{
+    color: #1259c3;
+}
+
+.fot-icon i:hover,
+.fot-icon i:focus{
+    color: #0022AA;
 }
 
 #copy {
@@ -283,6 +300,10 @@ footer {
     .caja-articulo {
 
         width: 44%;
+    }
+
+    .caja-articulo:focus {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 }
 
@@ -339,18 +360,44 @@ footer {
         transition-duration: 900ms;
     }
 
+        .caja-articulo i{
+        opacity: 0;
+    }
+
+    .caja-articulo:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .caja-articulo:hover i {
+        opacity: 1;
+        transform: translateY(13px);
+    }
+
+
+
+    .caja-articulo i:hover {
+        transform: translateY(13px) rotateZ(-90deg);
+    }
+
     .caja-articulo:hover .contenido-articulo {
-        animation: mostrar 1s 1 forwards;
+        animation: mostrar 800ms 1 forwards;
+        box-shadow: 0px 4px 5px 1px rgba(100, 100, 100, 1);
 
         transition: 1s;
     }
 
-    @keyframes mostrar{
-        50%{
+    .fot-sec-container{
+        display: flex;
+        flex-wrap: nowrap; 
+    }
+
+    @keyframes mostrar {
+        50% {
             z-index: 0;
             transform: translateY(0);
         }
-        100%{
+
+        100% {
             opacity: 1;
             transform: translateY(0);
             z-index: 1;
