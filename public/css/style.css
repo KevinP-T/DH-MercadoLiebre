@@ -1,3 +1,5 @@
+/*  Variables  */
+
 :root {
     --Amarillo: #EAC926;
     --Azul: #05366b;
@@ -6,6 +8,8 @@
     --Gris-claro: #ebebeb;
     --Verde: #39b54a;
 }
+
+/*  General  */
 
 * {
     box-sizing: border-box;
@@ -32,6 +36,8 @@ ul {
     margin: 2px;
     margin-bottom: 0;
 }
+
+/*  Header  */
 
 .header-items {
     display: flex;
@@ -82,9 +88,6 @@ ul {
     transition: 0.1s;
 }
 
-.search-icon i:hover {
-    scale: 1.05;
-}
 
 .header-text {
     font-size: 15px;
@@ -114,9 +117,6 @@ ul {
     color: var(--Azul);
 }
 
-.header-link-container * a:hover {
-    text-decoration: underline;
-}
 
 .burger-menu-button {
     display: flex;
@@ -140,10 +140,7 @@ ul {
     margin: 3px;
 }
 
-.burger-menu-button button:hover {
-    background-color: var(--Azul);
-}
-
+/*  Body  */
 
 main {
     width: 90vw;
@@ -236,22 +233,7 @@ section article {
     transition: 800ms;
 }
 
-
-.caja-articulo:hover,
-.caja-articulo:focus {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.caja-articulo i:hover,
-.caja-articulo i:focus {
-    animation: camionTurn 1000ms 1;
-}
-
-.caja-articulo:hover .contenido-articulo,
-.caja-articulo:focus .contenido-articulo {
-    animation: mostrar 800ms 1 forwards;
-    box-shadow: 0px 4px 5px 1px rgba(100, 100, 100, 1);
-}
+/*  Footer  */
 
 footer {
     margin: 0;
@@ -301,7 +283,37 @@ footer {
     padding: 5px;
 }
 
+/*  Hovers y Focus  */
 
+.search-icon i:hover {
+    scale: 1.05;
+}
+
+.header-link-container * a:hover {
+    text-decoration: underline;
+}
+
+.burger-menu-button button:hover {
+    background-color: var(--Azul);
+}
+
+.caja-articulo:hover,
+.caja-articulo:focus {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.caja-articulo i:hover,
+.caja-articulo i:focus {
+    animation: camionTurn 1000ms 1;
+}
+
+.caja-articulo:hover .contenido-articulo,
+.caja-articulo:focus .contenido-articulo {
+    animation: mostrar 800ms 1 forwards;
+    box-shadow: 0px 4px 5px 1px rgba(100, 100, 100, 1);
+}
+
+/*  Animaciones  */
 
 @keyframes mostrar {
     50% {
@@ -328,6 +340,8 @@ footer {
     }
 
 }
+
+/*  Adaptaciones  */
 
 @media (min-width: 413px) {
     .header-link-container {
@@ -472,5 +486,4 @@ footer {
         }
     
     }
-
 }
