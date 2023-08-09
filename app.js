@@ -20,7 +20,7 @@ app.get("/login", (req, res) =>{
     res.sendFile(path.join(__dirname, "/views/login.html"))
 })
 
-const port = 3000
+const port = process.env.port || 3000;
 
 app.listen(port, () => {
     console.log(`servidor en el puerto ${port}`);
